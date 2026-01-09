@@ -50,3 +50,5 @@ print(car_subaru.get_max_speed())
 print(car_subaru.max_speed)
 car_subaru.max_speed = 120
 print(car_subaru.max_speed)
+
+# car_subaru.__max_speed = 12321312 NO NO!
