@@ -1,4 +1,5 @@
 class User:
+    # переменная класса
     user_count = 0
 
     def __init__(self, name, phone):
@@ -12,8 +13,16 @@ class User:
 
     @classmethod
     def create_user(cls, name, phone):
+        if not User.validate_phone(phone):
+            raise ValueError('Phone number is not valid')
         new_user = cls(name, phone)
         return new_user
+
+    @staticmethod
+    def validate_phone(phone: str) -> bool:
+        if phone.isdigit():
+            return True
+        return False
 
 user_1 = User("Albert", "99677711111")
 print(User.user_count)
